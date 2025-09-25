@@ -1,0 +1,36 @@
+Project Name,Project ID,Ecosystem,Category,Priority,Progress,Status,Start Date,Estimated End Date,Deployment Preview Date,Deployment Production Date,Go-Live Risk,Colabe Ecosystem
+Open-Minded,PRJ-001,Adult,General,Medium,3,In Progress,2025-08-11,2026-03-29,2026-02-27,2026-03-29,On Track,True
+Flip-Flop,PRJ-002,Adult,General,Medium,6,In Progress,2025-07-27,2026-04-13,2026-03-14,2026-04-13,On Track,True
+Colabe Health Automation / Bugs Predictor,PRJ-003,Automation,General,High,9,In Progress,2025-07-12,2026-04-28,2026-03-29,2026-04-28,On Track,True
+M-AI-L,PRJ-004,Communications,General,Medium,12,In Progress,2025-06-27,2026-05-13,2026-04-13,2026-05-13,On Track,True
+Millionaires Hub,PRJ-005,Community,General,Medium,15,In Progress,2025-06-12,2026-05-28,2026-04-28,2026-05-28,On Track,True
+Oscar,PRJ-006,Adult,General,High,18,In Progress,2025-05-28,2026-06-12,2026-05-13,2026-06-12,On Track,True
+Colabe.dev,PRJ-007,Core,General,Medium,21,In Progress,2025-05-13,2026-06-27,2026-05-28,2026-06-27,On Track,True
+Colabe Domain Management,PRJ-008,Core,General,Medium,24,In Progress,2025-04-28,2026-07-12,2026-06-12,2026-07-12,On Track,True
+Colabe AI Builders,PRJ-009,Core,General,High,27,In Progress,2025-04-13,2026-07-27,2026-06-27,2026-07-27,On Track,True
+Colabe GPT Hub,PRJ-010,Core,General,Medium,30,In Progress,2025-03-29,2026-08-11,2026-07-12,2026-08-11,On Track,True
+MECB,PRJ-011,Core,General,Medium,33,In Progress,2025-03-14,2026-08-26,2026-07-27,2026-08-26,On Track,True
+Colabe Auto Dropshipping,PRJ-012,Fintech,General,High,36,In Progress,2025-02-27,2026-09-10,2026-08-11,2026-09-10,On Track,True
+The Conecto,PRJ-013,Fintech,General,Medium,39,In Progress,2025-02-12,2026-09-25,2026-08-26,2026-09-25,On Track,True
+Colabe iPayments,PRJ-014,Fintech,General,Medium,42,In Progress,2025-01-28,2026-10-10,2026-09-10,2026-10-10,On Track,True
+Colabe Collect,PRJ-015,Fintech,General,High,45,In Progress,2025-01-13,2026-10-25,2026-09-25,2026-10-25,On Track,True
+Colabe Game Center,PRJ-016,Gaming,General,Medium,48,In Progress,2024-12-29,2026-11-09,2026-10-10,2026-11-09,On Track,True
+Colabe Casino,PRJ-017,Gaming,General,Medium,51,In Progress,2024-12-14,2026-11-24,2026-10-25,2026-11-24,On Track,True
+Colabe Lotti Lottery,PRJ-018,Gaming,General,High,54,In Progress,2024-11-29,2026-12-09,2026-11-09,2026-12-09,On Track,True
+Colabe SEO Boosters,PRJ-019,Marketing,General,Medium,57,In Progress,2024-11-14,2026-12-24,2026-11-24,2026-12-24,On Track,True
+Colabe Social Manager,PRJ-020,Marketing,General,Medium,60,In Progress,2024-10-30,2027-01-08,2026-12-09,2027-01-08,On Track,True
+Colabe Sent You Viral,PRJ-021,Marketing,General,High,63,In Progress,2024-10-15,2027-01-23,2026-12-24,2027-01-23,On Track,True
+Colabe Animated Flyers,PRJ-022,Core,General,Medium,66,In Progress,2024-09-30,2027-02-07,2027-01-08,2027-02-07,On Track,True
+Colabe VPN Security,PRJ-023,Security,General,Medium,69,In Progress,2024-09-15,2027-02-22,2027-01-23,2027-02-22,On Track,True
+Colabe Ecosystem,PRJ-024,Core,General,High,72,In Progress,2024-08-31,2027-03-09,2027-02-07,2027-03-09,On Track,True
+Colabe Chat,PRJ-025,Communications,General,Medium,75,In Progress,2024-08-16,2027-03-24,2027-02-22,2027-03-24,On Track,True
+Colabe E-R,PRJ-026,Core,General,Medium,78,In Progress,2024-08-01,2027-04-08,2027-03-09,2027-04-08,On Track,True
+Colabe Affiliate Centre,PRJ-027,Marketing,General,High,81,In Progress,2024-07-17,2027-04-23,2027-03-24,2027-04-23,On Track,True
+Colabe AI Models,PRJ-028,Core,General,Medium,84,In Progress,2024-07-02,2027-05-08,2027-04-08,2027-05-08,On Track,True
+Colabe Database,PRJ-029,Core,General,Medium,87,In Progress,2024-06-17,2027-05-23,2027-04-23,2027-05-23,On Track,True
+Colabe Wiki,PRJ-030,Marketing,General,High,90,Done,2024-06-02,2027-06-07,2027-05-08,2027-06-07,On Track,True
+Colabe Leads Fusion,PRJ-031,Marketing,General,Medium,93,Done,2024-05-18,2027-06-22,2027-05-23,2027-06-22,On Track,True
+UNO Jackpot Infinity Vortex,PRJ-032,Gaming,General,Medium,96,Done,2024-05-03,2027-07-07,2027-06-07,2027-07-07,On Track,True
+Rainbow Shelter,PRJ-033,Community,General,High,99,Done,2024-04-18,2027-07-22,2027-06-22,2027-07-22,On Track,False
+Crypto-Colabe,PRJ-034,Fintech,General,Medium,2,In Progress,2025-08-16,2026-03-24,2026-02-22,2026-03-24,On Track,True
+Nexus Robotics Lab,PRJ-035,Core,General,Medium,5,In Progress,2025-08-01,2026-04-08,2026-03-09,2026-04-08,On Track,True

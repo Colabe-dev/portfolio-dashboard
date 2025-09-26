@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <title>Colabe Portfolio Dashboard</title>
 <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 </head>
 <body>
 <header><h2>Colabe Solutions — Portfolio Dashboard</h2></header>
@@ -14,7 +15,9 @@
     <div><div class="muted">Status</div><select id="st"></select></div>
     <div><div class="muted">Go-Live Risk</div><select id="risk"></select></div>
     <div><div class="muted">Colabe Ecosystem</div><select id="colabe"></select></div>
-    <div><div class="muted">Progress ≥ <span id="progVal">0%</span></div><input id="prog" type="range" min="0" max="100" step="5" value="0"></div>
+    <div><div class="muted">Progress ≥ <span id="progVal">0%</span></div>
+      <input id="prog" type="range" min="0" max="100" step="5" value="0">
+    </div>
   </div>
   <div class="kpis">
     <div class="card"><div>Projects</div><div id="kpiP" class="val">0</div></div>
@@ -25,26 +28,85 @@
   <table id="grid">
     <thead><tr>
       <th>Project</th><th>ID</th><th>Ecosystem</th><th>Category</th><th>Status</th>
-      <th>Progress</th><th>Estimated End</th><th>Preview Date</th><th>Production Date</th><th>Go-Live Risk</th><th>Colabe Ecosystem</th>
+      <th>Progress</th><th>Estimated End</th><th>Preview Date</th><th>Production Date</th>
+      <th>Go-Live Risk</th><th>Colabe Ecosystem</th>
     </tr></thead>
     <tbody></tbody>
   </table>
 </div>
 <script>
-const RAW = [{"Project Name": "Open-Minded", "Project ID": "PRJ-001", "Ecosystem": "Adult", "Category": "General", "Priority": "Medium", "Progress": "3", "Status": "In Progress", "Start Date": "2025-08-11", "Estimated End Date": "2026-03-29", "Deployment Preview Date": "2026-02-27", "Deployment Production Date": "2026-03-29", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Flip-Flop", "Project ID": "PRJ-002", "Ecosystem": "Adult", "Category": "General", "Priority": "Medium", "Progress": "6", "Status": "In Progress", "Start Date": "2025-07-27", "Estimated End Date": "2026-04-13", "Deployment Preview Date": "2026-03-14", "Deployment Production Date": "2026-04-13", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Health Automation / Bugs Predictor", "Project ID": "PRJ-003", "Ecosystem": "Automation", "Category": "General", "Priority": "High", "Progress": "9", "Status": "In Progress", "Start Date": "2025-07-12", "Estimated End Date": "2026-04-28", "Deployment Preview Date": "2026-03-29", "Deployment Production Date": "2026-04-28", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "M-AI-L", "Project ID": "PRJ-004", "Ecosystem": "Communications", "Category": "General", "Priority": "Medium", "Progress": "12", "Status": "In Progress", "Start Date": "2025-06-27", "Estimated End Date": "2026-05-13", "Deployment Preview Date": "2026-04-13", "Deployment Production Date": "2026-05-13", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Millionaires Hub", "Project ID": "PRJ-005", "Ecosystem": "Community", "Category": "General", "Priority": "Medium", "Progress": "15", "Status": "In Progress", "Start Date": "2025-06-12", "Estimated End Date": "2026-05-28", "Deployment Preview Date": "2026-04-28", "Deployment Production Date": "2026-05-28", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Oscar", "Project ID": "PRJ-006", "Ecosystem": "Adult", "Category": "General", "Priority": "High", "Progress": "18", "Status": "In Progress", "Start Date": "2025-05-28", "Estimated End Date": "2026-06-12", "Deployment Preview Date": "2026-05-13", "Deployment Production Date": "2026-06-12", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe.dev", "Project ID": "PRJ-007", "Ecosystem": "Core", "Category": "General", "Priority": "Medium", "Progress": "21", "Status": "In Progress", "Start Date": "2025-05-13", "Estimated End Date": "2026-06-27", "Deployment Preview Date": "2026-05-28", "Deployment Production Date": "2026-06-27", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Domain Management", "Project ID": "PRJ-008", "Ecosystem": "Core", "Category": "General", "Priority": "Medium", "Progress": "24", "Status": "In Progress", "Start Date": "2025-04-28", "Estimated End Date": "2026-07-12", "Deployment Preview Date": "2026-06-12", "Deployment Production Date": "2026-07-12", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe AI Builders", "Project ID": "PRJ-009", "Ecosystem": "Core", "Category": "General", "Priority": "High", "Progress": "27", "Status": "In Progress", "Start Date": "2025-04-13", "Estimated End Date": "2026-07-27", "Deployment Preview Date": "2026-06-27", "Deployment Production Date": "2026-07-27", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe GPT Hub", "Project ID": "PRJ-010", "Ecosystem": "Core", "Category": "General", "Priority": "Medium", "Progress": "30", "Status": "In Progress", "Start Date": "2025-03-29", "Estimated End Date": "2026-08-11", "Deployment Preview Date": "2026-07-12", "Deployment Production Date": "2026-08-11", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "MECB", "Project ID": "PRJ-011", "Ecosystem": "Core", "Category": "General", "Priority": "Medium", "Progress": "33", "Status": "In Progress", "Start Date": "2025-03-14", "Estimated End Date": "2026-08-26", "Deployment Preview Date": "2026-07-27", "Deployment Production Date": "2026-08-26", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Auto Dropshipping", "Project ID": "PRJ-012", "Ecosystem": "Fintech", "Category": "General", "Priority": "High", "Progress": "36", "Status": "In Progress", "Start Date": "2025-02-27", "Estimated End Date": "2026-09-10", "Deployment Preview Date": "2026-08-11", "Deployment Production Date": "2026-09-10", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "The Conecto", "Project ID": "PRJ-013", "Ecosystem": "Fintech", "Category": "General", "Priority": "Medium", "Progress": "39", "Status": "In Progress", "Start Date": "2025-02-12", "Estimated End Date": "2026-09-25", "Deployment Preview Date": "2026-08-26", "Deployment Production Date": "2026-09-25", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe iPayments", "Project ID": "PRJ-014", "Ecosystem": "Fintech", "Category": "General", "Priority": "Medium", "Progress": "42", "Status": "In Progress", "Start Date": "2025-01-28", "Estimated End Date": "2026-10-10", "Deployment Preview Date": "2026-09-10", "Deployment Production Date": "2026-10-10", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Collect", "Project ID": "PRJ-015", "Ecosystem": "Fintech", "Category": "General", "Priority": "High", "Progress": "45", "Status": "In Progress", "Start Date": "2025-01-13", "Estimated End Date": "2026-10-25", "Deployment Preview Date": "2026-09-25", "Deployment Production Date": "2026-10-25", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Game Center", "Project ID": "PRJ-016", "Ecosystem": "Gaming", "Category": "General", "Priority": "Medium", "Progress": "48", "Status": "In Progress", "Start Date": "2024-12-29", "Estimated End Date": "2026-11-09", "Deployment Preview Date": "2026-10-10", "Deployment Production Date": "2026-11-09", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Casino", "Project ID": "PRJ-017", "Ecosystem": "Gaming", "Category": "General", "Priority": "Medium", "Progress": "51", "Status": "In Progress", "Start Date": "2024-12-14", "Estimated End Date": "2026-11-24", "Deployment Preview Date": "2026-10-25", "Deployment Production Date": "2026-11-24", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Lotti Lottery", "Project ID": "PRJ-018", "Ecosystem": "Gaming", "Category": "General", "Priority": "High", "Progress": "54", "Status": "In Progress", "Start Date": "2024-11-29", "Estimated End Date": "2026-12-09", "Deployment Preview Date": "2026-11-09", "Deployment Production Date": "2026-12-09", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe SEO Boosters", "Project ID": "PRJ-019", "Ecosystem": "Marketing", "Category": "General", "Priority": "Medium", "Progress": "57", "Status": "In Progress", "Start Date": "2024-11-14", "Estimated End Date": "2026-12-24", "Deployment Preview Date": "2026-11-24", "Deployment Production Date": "2026-12-24", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Social Manager", "Project ID": "PRJ-020", "Ecosystem": "Marketing", "Category": "General", "Priority": "Medium", "Progress": "60", "Status": "In Progress", "Start Date": "2024-10-30", "Estimated End Date": "2027-01-08", "Deployment Preview Date": "2026-12-09", "Deployment Production Date": "2027-01-08", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Sent You Viral", "Project ID": "PRJ-021", "Ecosystem": "Marketing", "Category": "General", "Priority": "High", "Progress": "63", "Status": "In Progress", "Start Date": "2024-10-15", "Estimated End Date": "2027-01-23", "Deployment Preview Date": "2026-12-24", "Deployment Production Date": "2027-01-23", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Animated Flyers", "Project ID": "PRJ-022", "Ecosystem": "Core", "Category": "General", "Priority": "Medium", "Progress": "66", "Status": "In Progress", "Start Date": "2024-09-30", "Estimated End Date": "2027-02-07", "Deployment Preview Date": "2027-01-08", "Deployment Production Date": "2027-02-07", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe VPN Security", "Project ID": "PRJ-023", "Ecosystem": "Security", "Category": "General", "Priority": "Medium", "Progress": "69", "Status": "In Progress", "Start Date": "2024-09-15", "Estimated End Date": "2027-02-22", "Deployment Preview Date": "2027-01-23", "Deployment Production Date": "2027-02-22", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Ecosystem", "Project ID": "PRJ-024", "Ecosystem": "Core", "Category": "General", "Priority": "High", "Progress": "72", "Status": "In Progress", "Start Date": "2024-08-31", "Estimated End Date": "2027-03-09", "Deployment Preview Date": "2027-02-07", "Deployment Production Date": "2027-03-09", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Chat", "Project ID": "PRJ-025", "Ecosystem": "Communications", "Category": "General", "Priority": "Medium", "Progress": "75", "Status": "In Progress", "Start Date": "2024-08-16", "Estimated End Date": "2027-03-24", "Deployment Preview Date": "2027-02-22", "Deployment Production Date": "2027-03-24", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe E-R", "Project ID": "PRJ-026", "Ecosystem": "Core", "Category": "General", "Priority": "Medium", "Progress": "78", "Status": "In Progress", "Start Date": "2024-08-01", "Estimated End Date": "2027-04-08", "Deployment Preview Date": "2027-03-09", "Deployment Production Date": "2027-04-08", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Affiliate Centre", "Project ID": "PRJ-027", "Ecosystem": "Marketing", "Category": "General", "Priority": "High", "Progress": "81", "Status": "In Progress", "Start Date": "2024-07-17", "Estimated End Date": "2027-04-23", "Deployment Preview Date": "2027-03-24", "Deployment Production Date": "2027-04-23", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe AI Models", "Project ID": "PRJ-028", "Ecosystem": "Core", "Category": "General", "Priority": "Medium", "Progress": "84", "Status": "In Progress", "Start Date": "2024-07-02", "Estimated End Date": "2027-05-08", "Deployment Preview Date": "2027-04-08", "Deployment Production Date": "2027-05-08", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Database", "Project ID": "PRJ-029", "Ecosystem": "Core", "Category": "General", "Priority": "Medium", "Progress": "87", "Status": "In Progress", "Start Date": "2024-06-17", "Estimated End Date": "2027-05-23", "Deployment Preview Date": "2027-04-23", "Deployment Production Date": "2027-05-23", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Wiki", "Project ID": "PRJ-030", "Ecosystem": "Marketing", "Category": "General", "Priority": "High", "Progress": "90", "Status": "Done", "Start Date": "2024-06-02", "Estimated End Date": "2027-06-07", "Deployment Preview Date": "2027-05-08", "Deployment Production Date": "2027-06-07", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Colabe Leads Fusion", "Project ID": "PRJ-031", "Ecosystem": "Marketing", "Category": "General", "Priority": "Medium", "Progress": "93", "Status": "Done", "Start Date": "2024-05-18", "Estimated End Date": "2027-06-22", "Deployment Preview Date": "2027-05-23", "Deployment Production Date": "2027-06-22", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "UNO Jackpot Infinity Vortex", "Project ID": "PRJ-032", "Ecosystem": "Gaming", "Category": "General", "Priority": "Medium", "Progress": "96", "Status": "Done", "Start Date": "2024-05-03", "Estimated End Date": "2027-07-07", "Deployment Preview Date": "2027-06-07", "Deployment Production Date": "2027-07-07", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Rainbow Shelter", "Project ID": "PRJ-033", "Ecosystem": "Community", "Category": "General", "Priority": "High", "Progress": "99", "Status": "Done", "Start Date": "2024-04-18", "Estimated End Date": "2027-07-22", "Deployment Preview Date": "2027-06-22", "Deployment Production Date": "2027-07-22", "Go-Live Risk": "On Track", "Colabe Ecosystem": "False"}, {"Project Name": "Crypto-Colabe", "Project ID": "PRJ-034", "Ecosystem": "Fintech", "Category": "General", "Priority": "Medium", "Progress": "2", "Status": "In Progress", "Start Date": "2025-08-16", "Estimated End Date": "2026-03-24", "Deployment Preview Date": "2026-02-22", "Deployment Production Date": "2026-03-24", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}, {"Project Name": "Nexus Robotics Lab", "Project ID": "PRJ-035", "Ecosystem": "Core", "Category": "General", "Priority": "Medium", "Progress": "5", "Status": "In Progress", "Start Date": "2025-08-01", "Estimated End Date": "2026-04-08", "Deployment Preview Date": "2026-03-09", "Deployment Production Date": "2026-04-08", "Go-Live Risk": "On Track", "Colabe Ecosystem": "True"}];
-const ecoSel=document.getElementById('eco'),catSel=document.getElementById('cat'),stSel=document.getElementById('st'),rkSel=document.getElementById('risk'),colSel=document.getElementById('colabe'),progSl=document.getElementById('prog'),progVal=document.getElementById('progVal'),body=document.querySelector('#grid tbody');
+let RAW = [];
 
-function uniq(a){return Array.from(new Set(a.filter(Boolean))).sort();}
-function get(v){return v||"";}
-function populateFilters(rows){ecoSel.innerHTML=["",...uniq(rows.map(r=>get(r["Ecosystem"])))].map(x=>`<option>${x||'All'}</option>`).join('');catSel.innerHTML=["",...uniq(rows.map(r=>get(r["Category"])))].map(x=>`<option>${x||'All'}</option>`).join('');stSel.innerHTML=["",...uniq(rows.map(r=>get(r["Status"])))].map(x=>`<option>${x||'All'}</option>`).join('');rkSel.innerHTML=["","On Track","At Risk","Off Track"].map(x=>`<option>${x||'All'}</option>`).join('');colSel.innerHTML=["",...uniq(rows.map(r=>String(r["Colabe Ecosystem"])))].map(x=>`<option>${x||'All'}</option>`).join('');}
-function applyFilters(){const e=ecoSel.value,c=catSel.value,s=stSel.value,r=rkSel.value,ce=colSel.value,p=parseInt(progSl.value);progVal.textContent=p+"%";const rows=RAW.filter(rw=>{if(e&&rw["Ecosystem"]!==e)return false;if(c&&rw["Category"]!==c)return false;if(s&&rw["Status"]!==s)return false;if(r&&rw["Go-Live Risk"]!==r)return false;if(ce&&String(rw["Colabe Ecosystem"])!==ce)return false;let pr=parseFloat(rw["Progress"]);if(isNaN(pr))pr=0;if(pr<p)return false;return true;});render(rows);}
-function render(rows){body.innerHTML=rows.map(r=>`<tr>
-<td><a href="https://colabe.solutions/ppb/${get(r["Project ID"])}" target="_blank">${get(r["Project Name"])}</a></td>
-<td>${get(r["Project ID"])}</td><td>${get(r["Ecosystem"])}</td><td>${get(r["Category"])}</td><td>${get(r["Status"])}</td>
-<td>${get(r["Progress"])}%</td><td>${get(r["Estimated End Date"])}</td><td>${get(r["Deployment Preview Date"])}</td><td>${get(r["Deployment Production Date"])}</td><td>${get(r["Go-Live Risk"])}</td>
-<td>${r["Colabe Ecosystem"]==="True"?"✅":"❌"}</td>
-</tr>`).join('');document.getElementById('kpiP').textContent=rows.length;const nums=rows.map(r=>parseFloat(r["Progress"])).filter(n=>!isNaN(n));const avg=nums.length?(nums.reduce((a,b)=>a+b,0)/nums.length).toFixed(1):"0.0";document.getElementById('kpiProg').textContent=avg+"%";document.getElementById('kpiRisk').textContent=rows.filter(r=>r["Go-Live Risk"]==="At Risk").length;document.getElementById('kpiOff').textContent=rows.filter(r=>r["Go-Live Risk"]==="Off Track").length;}
-[ecoSel,catSel,stSel,rkSel,colSel,progSl].forEach(el=>el.addEventListener('input',applyFilters));populateFilters(RAW);applyFilters();
+const ecoSel=document.getElementById('eco'),
+      catSel=document.getElementById('cat'),
+      stSel=document.getElementById('st'),
+      rkSel=document.getElementById('risk'),
+      colSel=document.getElementById('colabe'),
+      progSl=document.getElementById('prog'),
+      progVal=document.getElementById('progVal'),
+      body=document.querySelector('#grid tbody');
+
+function uniq(a){ return Array.from(new Set(a.filter(Boolean))).sort(); }
+function get(v){ return v||""; }
+
+function populateFilters(rows){
+  ecoSel.innerHTML=["",...uniq(rows.map(r=>get(r["Ecosystem"])))].map(x=>`<option>${x||'All'}</option>`).join('');
+  catSel.innerHTML=["",...uniq(rows.map(r=>get(r["Category"])))].map(x=>`<option>${x||'All'}</option>`).join('');
+  stSel.innerHTML=["",...uniq(rows.map(r=>get(r["Status"])))].map(x=>`<option>${x||'All'}</option>`).join('');
+  rkSel.innerHTML=["","On Track","At Risk","Off Track"].map(x=>`<option>${x||'All'}</option>`).join('');
+  colSel.innerHTML=["","True","False"].map(x=>`<option>${x||'All'}</option>`).join('');
+}
+
+function applyFilters(){
+  const e=ecoSel.value,c=catSel.value,s=stSel.value,r=rkSel.value,ce=colSel.value,p=parseInt(progSl.value);
+  progVal.textContent=p+"%";
+  const rows=RAW.filter(rw=>{
+    if(e&&rw["Ecosystem"]!==e) return false;
+    if(c&&rw["Category"]!==c) return false;
+    if(s&&rw["Status"]!==s) return false;
+    if(r&&rw["Go-Live Risk"]!==r) return false;
+    if(ce&&String(rw["Colabe Ecosystem"])!==ce) return false;
+    let pr=parseFloat(rw["Progress"]); if(isNaN(pr)) pr=0;
+    if(pr<p) return false;
+    return true;
+  });
+  render(rows);
+}
+
+function render(rows){
+  body.innerHTML=rows.map(r=>`<tr>
+    <td><a href="https://colabe.solutions/ppb/${get(r["Project ID"])}" target="_blank">${get(r["Project Name"])}</a></td>
+    <td>${get(r["Project ID"])}</td>
+    <td>${get(r["Ecosystem"])}</td>
+    <td>${get(r["Category"])}</td>
+    <td>${get(r["Status"])}</td>
+    <td>${get(r["Progress"])}%</td>
+    <td>${get(r["Estimated End Date"])}</td>
+    <td>${get(r["Deployment Preview Date"])}</td>
+    <td>${get(r["Deployment Production Date"])}</td>
+    <td>${get(r["Go-Live Risk"])}</td>
+    <td>${r["Colabe Ecosystem"]==="True"?"✅":"❌"}</td>
+  </tr>`).join('');
+
+  document.getElementById('kpiP').textContent=rows.length;
+  const nums=rows.map(r=>parseFloat(r["Progress"])).filter(n=>!isNaN(n));
+  const avg=nums.length?(nums.reduce((a,b)=>a+b,0)/nums.length).toFixed(1):"0.0";
+  document.getElementById('kpiProg').textContent=avg+"%";
+  document.getElementById('kpiRisk').textContent=rows.filter(r=>r["Go-Live Risk"]==="At Risk").length;
+  document.getElementById('kpiOff').textContent=rows.filter(r=>r["Go-Live Risk"]==="Off Track").length;
+}
+
+// Load CSV dynamically
+Papa.parse("colabe_projects_status_progress.csv", {
+  download: true,
+  header: true,
+  complete: function(results){
+    RAW = results.data;
+    populateFilters(RAW);
+    [ecoSel,catSel,stSel,rkSel,colSel,progSl].forEach(el=>el.addEventListener('input',applyFilters));
+    applyFilters();
+  }
+});
 </script>
 </body>
 </html>

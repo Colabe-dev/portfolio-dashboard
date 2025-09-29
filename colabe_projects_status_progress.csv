@@ -1,0 +1,36 @@
+Project Name,Project ID,Ecosystem,Category,Priority,Progress,Status,Start Date,Estimated End Date,Deployment Preview Date,Deployment Production Date,Go-Live Risk,Development Platform,Colabe Ecosystem
+Open-Minded,PRJ-001,Adult,Escort & Content Platform,Medium,3,In Progress,2025-07-06,2033-04-08,2033-03-09,2033-04-08,On Track,v0.dev.com,True
+Flip-Flop,PRJ-002,Adult,Social Video Platform,Medium,6,In Progress,2025-06-11,2030-06-18,2030-05-19,2030-06-18,On Track,cloud.uibakery.io,True
+Oscar,PRJ-003,Content,AI Book & Script Generator,High,9,In Progress,2025-05-17,2029-06-25,2029-05-26,2029-06-25,On Track,replit.com,True
+Colabe Health Automation / Bugs Predictor,PRJ-004,Automation,Health & QA Predictor,Medium,12,In Progress,2025-04-22,2028-12-15,2028-11-15,2028-12-15,On Track,replit.com,True
+M-AI-L,PRJ-005,Communications,AI Email Service,Medium,15,In Progress,2025-03-28,2028-08-12,2028-07-13,2028-08-12,On Track,v0.dev.com,True
+Colabe Chat,PRJ-006,Communications,Chat System,High,18,In Progress,2025-03-03,2028-05-12,2028-04-12,2028-05-12,On Track,app.base44.com,True
+Millionaires Hub,PRJ-007,Community,Networking Hub,Medium,21,In Progress,2025-02-06,2028-03-01,2028-01-31,2028-03-01,On Track,replit.com,True
+Rainbow Shelter,PRJ-008,Community,Social NGO,Medium,24,In Progress,2025-01-12,2027-12-31,2027-12-01,2027-12-31,On Track,replit.com,False
+Colabe.dev,PRJ-009,Core,Ecosystem Hub,High,27,In Progress,2024-12-18,2027-11-08,2027-10-09,2027-11-08,On Track,replit.com,True
+Colabe Domain Management,PRJ-010,Core,Domain Tool,Medium,30,In Progress,2025-02-01,2027-04-12,2027-03-13,2027-04-12,On Track,v0.dev.com,True
+Colabe AI Builders,PRJ-011,Core,AI Builders,Medium,33,In Progress,2025-01-07,2027-03-21,2027-02-19,2027-03-21,On Track,replit.com,True
+Colabe GPT Hub,PRJ-012,Core,AI Hub,High,36,In Progress,2024-12-13,2027-02-26,2027-01-27,2027-02-26,On Track,replit.com,True
+MECB,PRJ-013,Core,Project Management,Medium,39,In Progress,2024-11-18,2027-02-03,2027-01-04,2027-02-03,On Track,replit.com,True
+Colabe Ecosystem,PRJ-014,Core,API Center,Medium,42,In Progress,2024-10-24,2027-01-11,2026-12-12,2027-01-11,On Track,replit.com,True
+Colabe E-R,PRJ-015,Core,Core,High,45,In Progress,2024-09-29,2026-12-19,2026-11-19,2026-12-19,On Track,replit.com,True
+Colabe AI Models,PRJ-016,Core,AI Models,Medium,48,In Progress,2024-09-04,2026-11-25,2026-10-26,2026-11-25,On Track,replit.com,True
+Colabe Database,PRJ-017,Core,Database Center,Medium,51,In Progress,2024-08-10,2026-11-01,2026-10-02,2026-11-01,On Track,cloud.uibakery.io,True
+Colabe Wiki,PRJ-018,Core,Knowledge Hub,High,54,In Progress,2024-07-16,2026-10-08,2026-09-08,2026-10-08,On Track,replit.com,True
+Nexus Robotics Lab,PRJ-019,Core,AI Robotics,Medium,57,In Progress,2024-06-21,2026-09-14,2026-08-15,2026-09-14,On Track,replit.com,False
+Colabe Auto Dropshipping,PRJ-020,Fintech,E-commerce,Medium,60,In Progress,2024-08-05,2025-09-30,2025-08-31,2025-09-30,On Track,replit.com,True
+The Conecto,PRJ-021,Fintech,Finance,High,63,In Progress,2024-07-11,2025-09-30,2025-08-31,2025-09-30,On Track,v0.dev.com,True
+Colabe iPayments,PRJ-022,Fintech,Finance,Medium,66,In Progress,2024-06-16,2025-09-30,2025-08-31,2025-09-30,On Track,v0.dev.com,True
+Colabe Collect,PRJ-023,Fintech,Finance,Medium,69,In Progress,2024-05-22,2025-09-30,2025-08-31,2025-09-30,On Track,replit.com,True
+Crypto-Colabe,PRJ-024,Fintech,Trading Platform,High,72,In Progress,2024-04-27,2025-09-30,2025-08-31,2025-09-30,On Track,replit.com,True
+Colabe Game Center,PRJ-025,Gaming,Game Hub,Medium,75,In Progress,2024-04-02,2026-03-29,2026-02-27,2026-03-29,On Track,replit.com,True
+Colabe Casino,PRJ-026,Gaming,Casino,Medium,78,In Progress,2024-03-08,2026-03-08,2026-02-06,2026-03-08,On Track,v0.dev.com,True
+Colabe Lotti Lottery,PRJ-027,Gaming,Lottery,High,81,In Progress,2024-02-12,2026-02-15,2026-01-16,2026-02-15,On Track,v0.dev.com,True
+UNO Jackpot Infinity Vortex,PRJ-028,Gaming,Jackpot Game,Medium,84,In Progress,2024-01-18,2026-01-25,2025-12-26,2026-01-25,On Track,replit.com,True
+Colabe SEO Boosters,PRJ-029,Marketing,SEO Automation,Medium,87,In Progress,2023-12-24,2025-09-30,2025-08-31,2025-09-30,On Track,v0.dev.com,True
+Colabe Social Manager,PRJ-030,Marketing,Social Media Automation,High,90,Done,2024-02-07,2025-09-30,2025-08-31,2025-09-30,On Track,v0.dev.com,True
+Colabe Sent You Viral,PRJ-031,Marketing,Social Media Automation,Medium,93,Done,2024-01-13,2025-09-30,2025-08-31,2025-09-30,On Track,v0.dev.com,True
+Colabe Animated Flyers,PRJ-032,Marketing,Design Tool,Medium,96,Done,2023-12-19,2025-09-30,2025-08-31,2025-09-30,On Track,v0.dev.com,True
+Colabe Affiliate Centre,PRJ-033,Marketing,Affiliate System,High,99,Done,2023-11-24,2025-09-30,2025-08-31,2025-09-30,On Track,replit.com,True
+Colabe Leads Fusion,PRJ-034,Marketing,Leads Manager,Medium,2,In Progress,2025-06-21,2025-09-30,2025-08-31,2025-09-30,At Risk,replit.com,True
+Colabe VPN Security,PRJ-035,Security,VPN Service,Medium,5,In Progress,2025-05-27,2032-03-31,2032-03-01,2032-03-31,On Track,v0.dev.com,True
